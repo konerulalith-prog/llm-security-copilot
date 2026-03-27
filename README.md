@@ -1,65 +1,79 @@
-# LLM Powered Security Copilot  
+# LLM Powered Security Copilot
 
-# Project Overview
+## Project Overview
 
-This project implements a hybrid security copilot system designed to assist in the interpretation of Linux authentication logs.
+This project presents a hybrid security copilot designed to help interpret Linux authentication logs.
 
-The system focuses on detecting repeated failed login attempts and generating clear, structured explanations of suspicious authentication activity.
+The system focuses on identifying repeated failed login attempts and generating clear explanations of suspicious authentication activity in simple language.
 
-# Project Development Stages
+---
 
-# Project Development-1
+## Project Development-1
 
-This phase included:
+In the first phase, the focus was on building the data foundation:
 
-1.  Downloading the Linux authentication log dataset (LogHub)
+1. Downloading the Linux authentication log dataset (LogHub)
 2. Loading logs using Python
-3.  Filtering authentication-related events
+3. Filtering authentication-related events
 4. Displaying suspicious log entries
 
-This stage established the preprocessing and data foundation of the system.
+This stage prepared the logs for structured analysis.
 
-# Project Development-2
+---
 
-This phase expanded the system by adding:
+## Project Development-2
+
+In the second phase, the system was expanded by adding:
 
 1. Rule-based detection of repeated failed login attempts
-2. Identification of possible brute force behavior
+2. Identification of possible brute-force behavior
 3. Natural language explanation generation
-4. Interactive query interface for user input
+4. An interactive query interface
 
-The system now analyzes filtered logs and produces structured explanations in response to security related questions.
+The system now analyzes filtered logs and provides structured explanations based on user questions.
 
-# System Architecture
+---
+
+## System Architecture
 
 Raw Logs  
-1. Keyword-Based Filtering  
-2. Authentication Pattern Detection  
-3. Explanation Generation  
-4. Interactive Security Copilot Interface  
+→ Keyword Filtering  
+→ Authentication Pattern Detection  
+→ Explanation Generation  
+→ Interactive Query Interface  
 
-# Example Queries
+---
 
-1. Summarize suspicious activity
-2. Are there repeated failed login attempts?
-3. Is there brute force behavior?
+## Example Questions
 
-# Design Approach
+1. Summarize suspicious activity  
+2. Are there repeated failed login attempts?  
+3. Is there brute-force behavior?  
 
-A lightweight and reproducible implementation was selected instead of relying on large external API-based models. 
+---
 
-This ensures:
+## Final Evaluation
 
-1. Cost efficiency
-2. Stable and consistent outputs
-3. Easy reproducibility for academic evaluation
-4. Clear and explainable system behavior
+The system was tested using different authentication log scenarios:
 
-# Future Work (Evaluation Phase)
+1. Logs with many repeated failed login attempts
+2. Logs with fewer failed attempts
+3. Logs with both failed and successful logins
 
-The final phase will focus on:
+The system consistently detected repeated failures and clearly explained suspicious patterns. Compared to raw log entries, the explanations were easier to understand.
 
-1. Structured evaluation scenarios
-2. Assessing interpretability and clarity
-3. Comparing system output with raw log analysis
-4. Documenting strengths and limitations
+---
+
+## Design Decision
+
+During development, large language model integration was explored. However, external API-based models require usage costs and introduce reproducibility challenges.
+
+For this academic project, a lightweight hybrid approach was selected to ensure stable behavior, reproducibility, and clear evaluation.
+
+---
+
+## Limitations
+
+- The detection logic is rule based.
+- The system focuses only on authentication related logs.
+- It does not perform real time monitoring.
